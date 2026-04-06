@@ -13,7 +13,7 @@ app.use(cors({
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
-add.options('*', cors()); // Enable pre-flight for all routes
+app.options('*', cors()); // Enable pre-flight for all routes
 app.use(express.json());
 
 app.get('/health', (req, res) => {
