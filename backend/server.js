@@ -8,12 +8,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({
-  origin:"*",
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type']
-}));
-app.options('*', cors()); // Enable pre-flight for all routes
+app.use(cors());
 app.use(express.json());
 
 app.get('/health', (req, res) => {
