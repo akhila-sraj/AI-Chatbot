@@ -9,8 +9,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin:"*"
+  origin:"*",
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
 }));
+add.options('*', cors()); // Enable pre-flight for all routes
 app.use(express.json());
 
 app.get('/health', (req, res) => {
