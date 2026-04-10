@@ -111,7 +111,7 @@ The frontend is served by the Express backend, so only one deployment URL is nee
 ## What to Submit
 
 1. GitHub PR link (`feature/ai-chatbot` branch)
-2. Google Drive demo video link (public access)
+2. Google Drive demo video link (public)
 
 ## Demo Video Checklist
 
