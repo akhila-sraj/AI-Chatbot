@@ -67,7 +67,4 @@ User → Frontend (index.html) → Your Backend (/chat) → OpenRouter API
 **Frontend URL:** https://ai-chatbot-igd5.onrender.com/ 
 **Backend URL:** https://ai-chatbot-igd5.onrender.com/
 
-## What to Submit
 
-1. GitHub PR link (branch: `feature/ai-chatbot`)
-2. Google Drive video link (Anyone with link can view)
