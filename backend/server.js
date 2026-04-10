@@ -2,16 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const fetch = require('node-fetch');
+const path = require('path');
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Basic CORS
+// CORS
 app.use(cors());
 
-// Manual CORS handling for preflight requests
+// Handle preflight requests
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Content-Type");
@@ -26,14 +27,17 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
+// Serve frontend files
+app.use(express.static(path.join(__dirname, '../frontend')));
+
 // Health route
 app.get('/health', (req, res) => {
   res.json({ status: "ok" });
 });
 
-// Root route
+// Root route serves frontend
 app.get('/', (req, res) => {
-  res.send("Backend working");
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 // Chat route
@@ -56,8 +60,7 @@ app.post('/chat', async (req, res) => {
 
     const data = await response.json();
 
-    res.json({ reply: data.choices[0].message.content });
-
+    res.json({ reply: data.choices?.[0]?.message?.content || "No response" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ reply: "Something went wrong" });

@@ -25,6 +25,7 @@ async function sendMessage() {
 
     const response = await fetch('https://ai-chatbot-lgd5.onrender.com/chat', {
         method: 'POST',
+        mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages })
     });
