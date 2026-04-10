@@ -64,8 +64,8 @@ User → Frontend (index.html) → Your Backend (/chat) → OpenRouter API
 
 ## Live Deployment
 
-**Frontend URL:** <!-- Add after deploying -->  
-**Backend URL:** <!-- Add after deploying -->
+**Frontend URL:** https://ai-chatbot-igd5.onrender.com/ 
+**Backend URL:** https://ai-chatbot-igd5.onrender.com/
 
 ## What to Submit
 
